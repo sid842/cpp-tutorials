@@ -116,17 +116,24 @@ std::string ToString(const T& x,
     return result;
 }
 
+template<typename T>
+void LOG(const T& t) {
+    std::cout << ToString(t) << std::endl;
+}
+
 int main(int argc, const char * argv[]) {
     std::vector<int> nums = {1, 2, 3, 4, 5};
-    std::cout << ToString(nums) << std::endl;
-    
     Person p;
     Animal a;
-    std::cout << ToString(p) << " " << ToString(a) << std::endl;
-    
     float pi = 3.14f;
-    
-    std::cout << ToString(pi) << "\n";
+
+    LOG(nums);
+
+    LOG(p);
+
+    LOG(a);
+
+    LOG(pi);
     
     return 0;
 }
