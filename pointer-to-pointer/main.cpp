@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+
+// Definition of the ListNode
 struct ListNode {
     int val;
     ListNode *next;
@@ -16,6 +18,7 @@ struct ListNode {
     {}
 };
 
+// Definition of the Linked List
 struct List {
     using ListAddBehaviorType = std::function<ListNode*(ListNode*, int)>;
     
@@ -41,6 +44,7 @@ struct List {
     }
 };
 
+// Simple Add behavior, implementing with special cases
 ListNode* SimpleListSortedAdd(ListNode* head, int v) {
     ListNode *newNode = new ListNode(v);
     
@@ -63,6 +67,7 @@ ListNode* SimpleListSortedAdd(ListNode* head, int v) {
     return head;
 }
 
+// Clean Add behavior, using the indirect reference trick
 ListNode* CleanListSortedAdd(ListNode* head, int v) {
     ListNode *newNode = new ListNode(v);
     
