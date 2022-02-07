@@ -48,6 +48,10 @@ struct List {
 ListNode* SimpleListSortedAdd(ListNode* head, int v) {
     ListNode *newNode = new ListNode(v);
     
+    if(head == nullptr) {
+        return newNode;
+    }
+    
     ListNode *prev = nullptr, *cur = head;
     
     while(cur && cur->val < v) {
@@ -58,8 +62,6 @@ ListNode* SimpleListSortedAdd(ListNode* head, int v) {
     if(prev == nullptr) {
         newNode->next = head;
         head = newNode;
-    } else if(cur == nullptr) {
-        prev->next = newNode;
     } else {
         newNode->next = cur;
         prev->next = newNode;
